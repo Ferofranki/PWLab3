@@ -16,6 +16,18 @@ namespace PWLab3
         public Form1()
         {
             InitializeComponent();
+            InitializeDataGridView();
+        }
+        private void InitializeDataGridView()
+        {
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("ID");
+            dataTable.Columns.Add("Imię");
+            dataTable.Columns.Add("Nazwisko");
+            dataTable.Columns.Add("Wiek");
+            dataTable.Columns.Add("Stanowisko");
+
+            dataGridView1.DataSource = dataTable;
         }
 
         private void ExportToCSV(DataGridView dataGridView, string filePath)
@@ -98,6 +110,46 @@ namespace PWLab3
                 // Wywołanie funkcji wczytującej dane z pliku CSV
                 LoadCSVToDataGridView(openFileDialog1.FileName); 
     }
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            using (NowyPracownik nowyPracownik = new NowyPracownik())
+            {
+                if(nowyPracownik.ShowDialog() == DialogResult.OK)
+                {
+                    int newId = 1;
+
+                    if (!(dataGridView1.DataSource is System.Data.DataTable dataTable))
+                    {
+                        InitializeDataGridView();
+                        dataTable = (DataTable)dataGridView1.DataSource;
+                    }
+                    if (dataTable.Rows.Count > 1)
+                    {
+                        int maxId = 0;
+                        foreach (System.Data.DataRow row in dataTable.Rows)
+                        {
+                            if (row["ID"] != DBNull.Value && int.TryParse(row["ID"].ToString(), out int obecneId))
+                            {
+                                if (obecneId > maxId)
+                                {
+                                    maxId = obecneId;
+                                }
+                            }
+                        }
+                        newId = maxId + 1;
+                    }
+                        dataTable.Rows.Add(newId, nowyPracownik.Imie, nowyPracownik.Nazwisko, nowyPracownik.Wiek, nowyPracownik.Stanowisko);
+                    }
+                    
+                }
+            }
+        
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

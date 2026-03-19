@@ -92,6 +92,7 @@
             this.btnZatwierdz.TabIndex = 8;
             this.btnZatwierdz.Text = "Zatwierdz";
             this.btnZatwierdz.UseVisualStyleBackColor = true;
+            this.btnZatwierdz.Click += new System.EventHandler(this.btnZatwierdz_Click);
             // 
             // btnAnuluj
             // 
@@ -101,6 +102,7 @@
             this.btnAnuluj.TabIndex = 9;
             this.btnAnuluj.Text = "Anuluj";
             this.btnAnuluj.UseVisualStyleBackColor = true;
+            this.btnAnuluj.Click += new System.EventHandler(this.btnAnuluj_Click);
             // 
             // tbAge
             // 

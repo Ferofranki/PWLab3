@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbName = new System.Windows.Forms.ComboBox();
-            this.cbSurname = new System.Windows.Forms.ComboBox();
-            this.cbAge = new System.Windows.Forms.ComboBox();
             this.cbStanowisko = new System.Windows.Forms.ComboBox();
             this.lbName = new System.Windows.Forms.Label();
             this.lbSurname = new System.Windows.Forms.Label();
@@ -38,31 +35,10 @@
             this.lbStanowisko = new System.Windows.Forms.Label();
             this.btnZatwierdz = new System.Windows.Forms.Button();
             this.btnAnuluj = new System.Windows.Forms.Button();
+            this.tbAge = new System.Windows.Forms.TextBox();
+            this.tbSurname = new System.Windows.Forms.TextBox();
+            this.tbName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // cbName
-            // 
-            this.cbName.FormattingEnabled = true;
-            this.cbName.Location = new System.Drawing.Point(13, 13);
-            this.cbName.Name = "cbName";
-            this.cbName.Size = new System.Drawing.Size(121, 24);
-            this.cbName.TabIndex = 0;
-            // 
-            // cbSurname
-            // 
-            this.cbSurname.FormattingEnabled = true;
-            this.cbSurname.Location = new System.Drawing.Point(13, 44);
-            this.cbSurname.Name = "cbSurname";
-            this.cbSurname.Size = new System.Drawing.Size(121, 24);
-            this.cbSurname.TabIndex = 1;
-            // 
-            // cbAge
-            // 
-            this.cbAge.FormattingEnabled = true;
-            this.cbAge.Location = new System.Drawing.Point(13, 75);
-            this.cbAge.Name = "cbAge";
-            this.cbAge.Size = new System.Drawing.Size(121, 24);
-            this.cbAge.TabIndex = 2;
             // 
             // cbStanowisko
             // 
@@ -126,11 +102,35 @@
             this.btnAnuluj.Text = "Anuluj";
             this.btnAnuluj.UseVisualStyleBackColor = true;
             // 
+            // tbAge
+            // 
+            this.tbAge.Location = new System.Drawing.Point(13, 75);
+            this.tbAge.Name = "tbAge";
+            this.tbAge.Size = new System.Drawing.Size(121, 22);
+            this.tbAge.TabIndex = 10;
+            // 
+            // tbSurname
+            // 
+            this.tbSurname.Location = new System.Drawing.Point(13, 44);
+            this.tbSurname.Name = "tbSurname";
+            this.tbSurname.Size = new System.Drawing.Size(121, 22);
+            this.tbSurname.TabIndex = 11;
+            // 
+            // tbName
+            // 
+            this.tbName.Location = new System.Drawing.Point(12, 16);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(122, 22);
+            this.tbName.TabIndex = 12;
+            // 
             // NowyPracownik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(252, 205);
+            this.Controls.Add(this.tbName);
+            this.Controls.Add(this.tbSurname);
+            this.Controls.Add(this.tbAge);
             this.Controls.Add(this.btnAnuluj);
             this.Controls.Add(this.btnZatwierdz);
             this.Controls.Add(this.lbStanowisko);
@@ -138,9 +138,6 @@
             this.Controls.Add(this.lbSurname);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.cbStanowisko);
-            this.Controls.Add(this.cbAge);
-            this.Controls.Add(this.cbSurname);
-            this.Controls.Add(this.cbName);
             this.Name = "NowyPracownik";
             this.Text = "NowyPracownik";
             this.ResumeLayout(false);
@@ -149,10 +146,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cbName;
-        private System.Windows.Forms.ComboBox cbSurname;
-        private System.Windows.Forms.ComboBox cbAge;
         private System.Windows.Forms.ComboBox cbStanowisko;
         private System.Windows.Forms.Label lbName;
         private System.Windows.Forms.Label lbSurname;
@@ -160,5 +153,8 @@
         private System.Windows.Forms.Label lbStanowisko;
         private System.Windows.Forms.Button btnZatwierdz;
         private System.Windows.Forms.Button btnAnuluj;
+        private System.Windows.Forms.TextBox tbAge;
+        private System.Windows.Forms.TextBox tbSurname;
+        private System.Windows.Forms.TextBox tbName;
     }
 }

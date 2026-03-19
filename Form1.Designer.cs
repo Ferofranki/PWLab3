@@ -54,6 +54,7 @@
             this.btnZapisz.TabIndex = 1;
             this.btnZapisz.Text = "Zapisz do .csv";
             this.btnZapisz.UseVisualStyleBackColor = true;
+            this.btnZapisz.Click += new System.EventHandler(this.btnZapisz_Click);
             // 
             // btnOdczyt
             // 
@@ -63,6 +64,7 @@
             this.btnOdczyt.TabIndex = 2;
             this.btnOdczyt.Text = "Odczytuj z .csv";
             this.btnOdczyt.UseVisualStyleBackColor = true;
+            this.btnOdczyt.Click += new System.EventHandler(this.btnOdczyt_Click);
             // 
             // btnDodaj
             // 

@@ -33,6 +33,7 @@
             this.btnOdczyt = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnUsun = new System.Windows.Forms.Button();
+            this.btnZapiszXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,11 +87,23 @@
             this.btnUsun.Text = "Usun";
             this.btnUsun.UseVisualStyleBackColor = true;
             // 
+            // btnZapiszXML
+            // 
+            this.btnZapiszXML.Location = new System.Drawing.Point(391, 283);
+            this.btnZapiszXML.Name = "btnZapiszXML";
+            this.btnZapiszXML.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnZapiszXML.Size = new System.Drawing.Size(102, 42);
+            this.btnZapiszXML.TabIndex = 5;
+            this.btnZapiszXML.Text = "Zapisz XML";
+            this.btnZapiszXML.UseVisualStyleBackColor = true;
+            this.btnZapiszXML.Click += new System.EventHandler(this.btnZapiszXML_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(505, 418);
+            this.Controls.Add(this.btnZapiszXML);
             this.Controls.Add(this.btnUsun);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.btnOdczyt);
@@ -110,6 +123,7 @@
         private System.Windows.Forms.Button btnOdczyt;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnUsun;
+        private System.Windows.Forms.Button btnZapiszXML;
     }
 }
 

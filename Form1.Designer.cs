@@ -33,6 +33,7 @@
             this.btnOdczyt = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.btnUsun = new System.Windows.Forms.Button();
+            this.btnZapiszJSON = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,11 +87,22 @@
             this.btnUsun.Text = "Usun";
             this.btnUsun.UseVisualStyleBackColor = true;
             // 
+            // btnZapiszJSON
+            // 
+            this.btnZapiszJSON.Location = new System.Drawing.Point(391, 75);
+            this.btnZapiszJSON.Name = "btnZapiszJSON";
+            this.btnZapiszJSON.Size = new System.Drawing.Size(102, 36);
+            this.btnZapiszJSON.TabIndex = 5;
+            this.btnZapiszJSON.Text = "JSON";
+            this.btnZapiszJSON.UseVisualStyleBackColor = true;
+            this.btnZapiszJSON.Click += new System.EventHandler(this.btnZapiszJSON_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(505, 418);
+            this.Controls.Add(this.btnZapiszJSON);
             this.Controls.Add(this.btnUsun);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.btnOdczyt);
@@ -110,6 +122,7 @@
         private System.Windows.Forms.Button btnOdczyt;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.Button btnUsun;
+        private System.Windows.Forms.Button btnZapiszJSON;
     }
 }
 

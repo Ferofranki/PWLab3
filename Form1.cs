@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.Json;
 
 namespace PWLab3
 {
@@ -150,6 +151,38 @@ namespace PWLab3
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnZapiszJSON_Click(object sender, EventArgs e)
+        {
+            List<Osoba> listaOsob = new List<Osoba>();
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    Osoba osoba = new Osoba(
+                        Convert.ToInt32(row.Cells["ID"].Value),
+                        row.Cells["Imię"].Value.ToString(),
+                        row.Cells["Nazwisko"].Value.ToString(),
+                        Convert.ToInt32(row.Cells["Wiek"].Value),
+                        row.Cells["Stanowisko"].Value.ToString()
+                    );
+                    listaOsob.Add(osoba);
+                }
+            }
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Pliki JSON (*.json)|*.json";
+            saveFileDialog.Title = "Wybierz lokalizację zapisu pliku JSON";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string jsonString = JsonSerializer.Serialize(listaOsob, new JsonSerializerOptions { WriteIndented = true });
+
+                File.WriteAllText(saveFileDialog.FileName, jsonString);
+
+            }
         }
     }
 }
